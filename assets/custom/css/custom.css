@@ -330,10 +330,10 @@ body{
     right: 0;
 }
 .fables-vision-overlay.fables-after-overlay::after { 
-    background-color:rgba(44,62,79,.97); 
+    background-color:rgba(0, 0, 0); 
 }
 .fables-light-overlay.fables-after-overlay::after {
-    background-color: rgba(255,255,255,.87);
+    background-color: rgba(0, 0, 0);
 }
 .fables-counter-section{
     background-image: url("../images/counter-background.jpg");  
