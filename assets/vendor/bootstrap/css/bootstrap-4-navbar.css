@@ -17,7 +17,7 @@
 .btco-hover-menu li a:hover,
 .btco-hover-menu li a:focus ,
 .navbar>.show>a,  .navbar>.show>a:focus,  .navbar>.show>a:hover{
-    color: #E54D42;
+    color: #4f4e4e;
     background: transparent;
     outline: 0;
 }
@@ -37,14 +37,14 @@
     margin-top: 8px;
 }
 .fables-nav .nav-link {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 15px;
     font-weight: 400;
     transition: all 0.3s ease-in-out;
     padding: 10px 15px !important;
 }
 .fables-nav .nav-link:hover {
-    color: rgb(229, 77, 66);
+    color: #4f4e4e;
 }
 /*submenu style start from here*/
 
@@ -61,7 +61,7 @@
 }
 
 /*first level*/
-.btco-hover-menu .collapse ul > li:hover > a{background: transparent;color: rgb(229, 77, 66);}
+.btco-hover-menu .collapse ul > li:hover > a{background: transparent;color: #4f4e4e;}
  
 /*second level*/
 .btco-hover-menu .collapse ul ul ul > li:hover > a{background: #fff;}

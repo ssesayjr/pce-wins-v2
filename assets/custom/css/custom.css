@@ -193,7 +193,7 @@ body{
     background-color: rgba(44,62,79,.8);
 }
 .overlay-lighter:after{
-    background-color: rgba(44,62,79,.7);
+    background-color: rgba(255, 255, 255, 0.7);
 }
 .fables-transparent {
     position: absolute;
@@ -287,7 +287,7 @@ body{
 /* start about us pages */
 .fables-vision-overlay { 
     padding: 47px 25px 51px 25px;
-    color: #DDDDDD;
+    color: #000000;
     height: 100%;
 }
 
@@ -1274,6 +1274,14 @@ body{
 .white-color-hover:hover{
     color: #fff;
 }
+
+.black-color{
+    color: #000000;
+}
+.black-color-hover:hover{
+    color: #000000;
+}
+
 .load-more{
     padding: 9px 32px;
 }
@@ -2556,7 +2564,7 @@ body{
     right: 0;
     width: 0;
 	height: 0;
-	border-bottom: 100vh solid rgba(255,255,255,.75);
+	border-bottom: 100vh solid rgba(0, 0, 0, 0.75);
 	border-right: 98.5vw solid transparent;
     z-index: 3;
     bottom: 0;
@@ -3383,16 +3391,16 @@ a.toggle-menu{
     transition: .3s; 
 }      
 .navbar .dropdown-menu.mega-menu.v-2 .sub-menu a.menu-item {
-    color: #fff !important; 
+    color: #000000 !important; 
 }
 .navbar .dropdown-menu.mega-menu.v-2 .sub-menu a.menu-item:hover {
-    color: #fff !important; 
+    color: #000000 !important; 
 }
 .navbar .dropdown-menu.mega-menu.v-2 .sub-title {
     padding-bottom: 1rem;
     margin-bottom: 1rem;
     border-bottom: 1px solid;
-    color: #fff;
+    color: #000000;
 }
 .navbar .dropdown-menu.mega-menu.v-2 .font-small {
     font-size: 0.85rem; 
