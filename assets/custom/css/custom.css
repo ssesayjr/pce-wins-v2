@@ -3449,3 +3449,223 @@ a.toggle-menu{
     border-left: 0 !important;
     border-radius: 0;
 }
+
+
+/***********************************************
+ * RESPONSIVE ADDITIONS (mobile, tablets, small)
+ * Append at end of custom.css
+ ***********************************************/
+
+/* 1) Global, fluid defaults */
+html {
+  box-sizing: border-box;
+  /* Scale typography smoothly from phone → desktop */
+  font-size: clamp(14px, 1.5vw, 16px);
+}
+*, *::before, *::after { box-sizing: inherit; }
+
+img, video, canvas, svg { max-width: 100%; height: auto; display: block; }
+iframe { max-width: 100%; }
+
+/* Avoid parallax jank on mobile where used */
+@media (max-width: 767.98px) {
+  .fables-after-overlay,
+  .fables-footer-image,
+  .fables-bussiness-section,
+  .fables-testimonial,
+  .together-block,
+  .fables-choose-background {
+    background-attachment: scroll !important;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 2) Container padding for small screens */
+.container,
+.fables-footer-image .container {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* 3) Header + top bars */
+.header-fixed-height { height: 90px; }
+@media (max-width: 991.98px) {
+  .header-fixed-height         { height: 72px; }
+  .header-fixed-height-large   { height: 96px; }
+  .max-line-height             { line-height: 60px; }
+}
+@media (max-width: 767.98px) {
+  .fables-top-header-signin    { height: 36px; line-height: 34px; }
+  .fables-transparent          { position: fixed; }
+}
+
+/* 4) Navigation: keep links side-by-side on wide, stack on narrow */
+.fables-mega-menu,
+.fables-header-icons,
+.fables-footer-social-links,
+.fables-contact-social-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 767.98px) {
+  .fables-mega-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 8px;
+  }
+  .fables-mega-menu > li { display: inline-flex; }
+  /* Larger tap targets on mobile */
+  .fables-mega-menu > li > a,
+  .header-icon {
+    padding: 10px 12px !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* 5) Page titles & headings */
+.fables-page-title {
+  font-size: clamp(24px, 4.2vw, 40px);
+  line-height: clamp(36px, 6vw, 80px);
+  margin-top: clamp(48px, 12vw, 108px);
+  padding-left: 14px;
+}
+
+/* 6) Grids, cards, and lists */
+.fables-team-border,
+.fables-blog-cat-list,
+.fables-footer-links,
+.fables-store-left-list {
+  display: grid;
+  gap: 10px;
+}
+
+@media (min-width: 992px) {
+  .fables-team-border         { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .fables-footer-links        { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .fables-team-border         { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .fables-footer-links        { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 767.98px) {
+  .fables-team-border,
+  .fables-footer-links        { grid-template-columns: 1fr; }
+  .fables-footer-links li     { width: 100%; }
+}
+
+/* 7) Carousels & sliders (owl) — spacing & controls */
+#fables-testimonial-carousel .owl-item { padding: 28px 32px 16px; }
+@media (max-width: 991.98px) {
+  #fables-testimonial-carousel .owl-item { padding: 20px 18px 12px; }
+  .fables-testimonial-carousel-item      { padding: 8px; }
+}
+@media (max-width: 575.98px) {
+  #fables-testimonial-carousel .owl-item { padding: 14px 10px; }
+}
+
+/* 8) Timelines (gallery/blog) — stack and widen content */
+@media (max-width: 991.98px) {
+  .gallery-timeline#cd-timeline::before,
+  #cd-timeline.blog-timeline::before {
+    left: 8% !important;
+  }
+  .gallery-timeline .cd-timeline-content,
+  .blog-timeline   .cd-timeline-content {
+    float: none;
+    width: 100%;
+    box-shadow: 0 0 6px #ddd;
+  }
+  .gallery-timeline .cd-timeline-img,
+  .blog-timeline   .cd-timeline-img {
+    left: 8% !important;
+  }
+  .gallery-timeline .cd-timeline-content .cd-date,
+  .blog-timeline   .cd-date {
+    position: static;
+    display: block;
+    margin: 8px 0 0;
+    text-align: left;
+  }
+}
+
+/* 9) Forms & inputs */
+.fables-contact-hover-input,
+.fables-subscribe-input,
+.fables-store-input {
+  width: 100%;
+  min-height: 40px;
+  padding: 10px 14px;
+}
+
+@media (max-width: 575.98px) {
+  .fables-subscribe-formgroup { width: 100%; position: relative; }
+  .fables-subscribe-btn       { position: static; display: inline-block; margin-top: 10px; }
+}
+
+/* 10) Social link buttons — center and enlarge tap area on mobile */
+.fables-contact-social-links,
+.fables-footer-social-links {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.fables-contact-social-links a,
+.fables-footer-social-links a {
+  width: 40px; height: 40px;
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  border-radius: 50%;
+}
+
+@media (max-width: 575.98px) {
+  .fables-contact-social-links a,
+  .fables-footer-social-links a {
+    width: 44px; height: 44px;
+  }
+}
+
+/* 11) Index / hero sections */
+.fables-index-products { height: auto; min-height: 360px; }
+@media (max-width: 991.98px) {
+  .large-mb { margin-bottom: 10%; }
+}
+@media (max-width: 575.98px) {
+  .large-mb { margin-bottom: 6%; }
+}
+
+/* 12) Utility helpers */
+.hide-mobile   { display: none !important; }
+.show-desktop  { display: block !important; }
+@media (min-width: 992px) {
+  .hide-desktop { display: none !important; }
+  .show-desktop { display: block !important; }
+}
+@media (max-width: 991.98px) {
+  .hide-mobile  { display: none !important; }
+  .show-mobile  { display: block !important; }
+}
+
+/* 13) Footer spacing & copyright */
+.copyright { padding: 16px 0; font-size: 0.9rem; text-align: center; }
+
+/* 14) Buttons: larger tap targets on small screens */
+@media (max-width: 575.98px) {
+  .btn, .fables-btn-link, .fables-single-blog .btn, .fables-single-gallery-pg {
+    padding: 10px 18px;
+    min-height: 42px;
+  }
+}
