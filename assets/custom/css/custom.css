@@ -3543,30 +3543,6 @@ iframe { max-width: 100%; }
   padding-left: 14px;
 }
 
-/* 6) Grids, cards, and lists */
-.fables-team-border,
-.fables-blog-cat-list,
-.fables-footer-links,
-.fables-store-left-list {
-  display: grid;
-  gap: 10px;
-}
-
-@media (min-width: 992px) {
-  .fables-team-border         { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .fables-footer-links        { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-
-@media (max-width: 991.98px) and (min-width: 768px) {
-  .fables-team-border         { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .fables-footer-links        { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 767.98px) {
-  .fables-team-border,
-  .fables-footer-links        { grid-template-columns: 1fr; }
-  .fables-footer-links li     { width: 100%; }
-}
 
 /* 7) Carousels & sliders (owl) — spacing & controls */
 #fables-testimonial-carousel .owl-item { padding: 28px 32px 16px; }
